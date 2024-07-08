@@ -1,18 +1,20 @@
-# Microservicio de Gestión de Productos
+# Online CoffeeShop - Product Management
+![Imagen de la portada](/image/p1.jpg)
 
-Este proyecto es un microservicio desarrollado con Node.js y Express para gestionar productos mediante una API REST.
+Members: Jonathan Chasipanta - Gonzalo Guachamin
 
-## Requisitos
+This project is a microservice developed with Node.js and Express to manage products (CRUD) through a REST API.
 
-- Node.js
-- Docker (opcional, para despliegue con contenedor)
+## Requirements
 
-## Instalación
+- Node v20.13.1
+- Docker version 26.0.0 
+
+## Installation
 
 1. Clona este repositorio:
     ```bash
-    git clone https://github.com/tu_usuario/tu_repositorio.git
-    cd tu_repositorio
+    git clone https://github.com/JonathanP06511/P1M3-onlineCoffee.git
     ```
 
 2. Instala las dependencias:
@@ -20,38 +22,36 @@ Este proyecto es un microservicio desarrollado con Node.js y Express para gestio
     npm install
     ```
 
-3. Asegúrate de tener un directorio `frontend` en la raíz del proyecto que contenga tu interfaz de usuario.
+## Usage
 
-## Uso
-
-1. Inicia el servidor:
+1. Start the server:
     ```bash
-    node server.js
+    npm start
+    ```
+     ```bash
+      node server.js
     ```
 
-2. Abre tu navegador y navega a `http://localhost:3000` para interactuar con la interfaz de usuario.
+2. Open your browser and navigate to http://localhost:3003 to view the frontend interface.
+## Docker Usage
 
-## Uso con Docker
-
-1. Construye la imagen Docker:
+1. Build the Docker image:
     ```bash
-    docker build -t product-service .
+    docker build -t image-name .
     ```
 
-2. Inicia un contenedor con la imagen creada:
+2. Run a container using the created image:
     ```bash
-    docker run -p 3000:3000 -v $(pwd)/frontend:/app/frontend product-service
+    docker run -p 8080:3003 -d --name container_name image_name
     ```
 
-3. Abre tu navegador y navega a `http://localhost:3000` para interactuar con la interfaz de usuario.
+3. Open your browser and navigate to http://localhost:8080 to view the frontend interface.
 
 ## Endpoints
 
-- `GET /products`: Obtiene todos los productos.
-- `POST /products`: Crea un nuevo producto.
-- `GET /products/:id`: Obtiene un producto específico por ID.
-- `PUT /products/:id`: Actualiza un producto específico por ID.
-- `DELETE /products/:id`: Elimina un producto específico por ID.
-
-## Estructura del Proyecto
+- `GET /products`: Retrieves all products.
+- `POST /products`: Creates a new product.
+- `GET /products/:id`: Retrieves a specific product by ID.
+- `PUT /products/:id`: Updates a specific product by ID.
+- `DELETE /products/:id`: Deletes a specific product by ID.
 
